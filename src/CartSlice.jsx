@@ -13,16 +13,15 @@ export const CartSlice = createSlice({
       );
       if (existingItem) {
         existingItem.quantity += 1;
+      } else {
+        state.items.push({
+          name: product.name,
+          image: product.image,
+          description: product.description,
+          cost: product.cost,
+          quantity: 1,
+        });
       }
-      if (!existingItem) {
-      }
-      state.items.push({
-        name: product.name,
-        image: product.image,
-        description: product.description,
-        cost: product.cost,
-        quantity: 1,
-      });
     },
     removeItem: (state, action) => {
       state.items = state.items.filter(
