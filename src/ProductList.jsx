@@ -9,9 +9,6 @@ function ProductList({ onHomeClick }) {
   const [addToCard, setAddToCard] = useState({});
   const dispatch = useDispatch();
   const CartItems = useSelector((state) => state.cart.items);
-
-  2;
-  3;
   const calculateTotalQuantity = () => {
     return CartItems
       ? CartItems.reduce((total, item) => total + item.quantity, 0)
@@ -20,7 +17,6 @@ function ProductList({ onHomeClick }) {
   const totalQuantity = calculateTotalQuantity();
   const handleAddToCard = (product) => {
     dispatch(addItem(product));
-    [];
     setAddToCard((prev) => ({
       ...prev,
       [product.name]: true,
@@ -274,7 +270,7 @@ function ProductList({ onHomeClick }) {
     padding: "15px",
     display: "flex",
     justifyContent: "space-between",
-    alignIems: "center",
+    alignItems: "center",
     fontSize: "20px",
   };
   const styleObjUl = {
